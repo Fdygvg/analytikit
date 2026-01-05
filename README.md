@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# AnalytiKit - Analytics Dashboard & Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, fully responsive analytics dashboard with marketing landing page built with modern web technologies.
 
-Currently, two official plugins are available:
+![AnalytiKit Demo](https://img.shields.io/badge/demo-responsive-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue)
+![React](https://img.shields.io/badge/React-18.2-blue)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.3-blue)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+[Deploy on Vercel/Netlify for instant demo]
 
-## React Compiler
+## 📋 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🏠 Landing Page
+- **Responsive Design** - Mobile-first, works on all screen sizes
+- **Hero Section** - Eye-catching headline with dashboard preview
+- **Features Grid** - 6 feature cards with icons and descriptions
+- **Pricing Plans** - 3-tier pricing with toggle (monthly/annual)
+- **Testimonials** - Customer reviews carousel
+- **FAQ Section** - Accordion with contact options
+- **Modern Footer** - Newsletter, social links, and navigation
 
-## Expanding the ESLint configuration
+### 📊 Dashboard
+- **Interactive Charts** - Line, bar, area, and pie charts (Recharts)
+- **Metrics Grid** - 6 real-time metrics with trends and mini-charts
+- **Data Tables** - Sortable, paginated tables with search/filter
+- **Geography Map** - Visitor distribution by country
+- **Recent Activity** - Team activity feed with timestamps
+- **Sidebar Navigation** - Collapsible, mobile-friendly menu
+- **Top Navigation** - User menu, notifications, theme toggle
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
+- **React 18** - Component-based UI
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **shadcn/ui** - Accessible component library
+- **Recharts** - Interactive charting library
+- **Lucide React** - Icon library
+- **React Router DOM** - Client-side routing
+- **date-fns** - Date formatting utilities
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Development Tools
+- **Vite** - Fast build tool and dev server
+- **ESLint** - Code linting
+- **TypeScript** - Static type checking
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📁 Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+├── components/
+│ ├── dashboard/ # Dashboard components
+│ │ ├── Sidebar.tsx # Navigation sidebar
+│ │ ├── TopNav.tsx # Top navigation bar
+│ │ ├── MetricGrid.tsx # Metrics cards
+│ │ ├── ChartSection.tsx # Interactive charts
+│ │ ├── DataTable.tsx # Data tables
+│ │ └── RecentActivity.tsx # Activity feed
+│ │
+│ ├── landing/ # Landing page components
+│ │ ├── Header.tsx # Navigation header
+│ │ ├── Hero.tsx # Main hero section
+│ │ ├── Features.tsx # Features grid
+│ │ ├── Pricing.tsx # Pricing plans
+│ │ ├── Testimonials.tsx # Customer reviews
+│ │ ├── FAQ.tsx # FAQ accordion
+│ │ └── Footer.tsx # Page footer
+│ │
+│ └── ui/ # shadcn/ui components
+│ ├── button.tsx
+│ ├── card.tsx
+│ └── ... (15+ components)
+│
+├── pages/ # Page components
+│ ├── LandingPage.tsx # Main landing page
+│ ├── DashboardPage.tsx # Analytics dashboard
+│ └── NotFoundPage.tsx # 404 page
+│
+├── data/ # Mock data and types
+│ ├── types.ts # TypeScript interfaces
+│ ├── landingData.ts # Landing page content
+│ └── dashboardData.ts # Dashboard mock data
+│
+├── styles/ # Global styles
+│ └── globals.css # Tailwind + custom CSS
+│
+├── App.tsx # Main app with routing
+└── main.tsx # Entry point
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+
+Key Features Implemented
+Landing Page
+Mobile-first responsive design
+
+Gradient backgrounds and subtle animations
+
+Interactive pricing toggle
+
+Testimonial carousel with navigation
+
+FAQ accordion with smooth transitions
+
+Dashboard
+Real-time metric cards with trend indicators
+
+Interactive charts with multiple views
+
+Sortable, searchable data tables
+
+User activity tracking
+
+Dark/light mode ready (toggle in TopNav)
